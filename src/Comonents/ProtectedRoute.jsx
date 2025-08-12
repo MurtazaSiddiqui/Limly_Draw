@@ -1,14 +1,16 @@
-// ProtectedRoute.jsx
-import React from "react";
-import {  Navigate } from 'react-router'
+import { Navigate } from "react-router";
+import { useAuth } from "../context/AuthContext.jsx";
 
 
 export default function ProtectedRoute({ children }) {
-  const storedUser = localStorage.getItem("user");
+  const { user, loading } = useAuth();
 
-  // If no user in local storage, redirect to landing page
-  if (!storedUser) {
-    return <Navigate to="/" replace />;
+  if (loading) {
+    return <div>Loading...</div>; // you can replace with a spinner
+  }
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
   }
 
   return children;

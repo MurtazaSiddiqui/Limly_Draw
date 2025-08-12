@@ -792,3 +792,130 @@ ul.benefits li {
   gap: 10px;
   font-size: 20px;
 }
+
+/* css end  */
+
+/* sign up page css start */
+.login-wrapper{
+
+  padding: 50px 0;
+}
+.signUp-inner{
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+    box-shadow:0px 4px 64.87px rgba(0, 0, 0, 0.20);
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+.padding-form{
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.signUp-inner img{
+  width: 100%;
+  height: 630px;
+}
+
+.login-wrapper .w-50{
+  width: 50%;
+}
+.input-group-2{
+  position: relative;
+}
+.login-wrapper input{
+  width: 100%;
+  display: block;
+  padding: 15px 20px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  transition: 0.3s all ease-in-out;
+}
+.login-wrapper label {
+    margin-left: 12px;
+    transform: translateY(12px);
+    background: #fff;
+    padding: 0 8px;
+    transition: 0.3s all ease-in-out;
+    font-size: 14px;
+}
+
+
+.login-form{
+  width: 80%;
+}
+.btn-register{
+  background: #3E56DF;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  color: #fff;
+  border: 1px solid #3E56DF;
+  transition: 0.3s all ease-in-out;
+  font-size: 18px;
+  margin-top: 22px;
+}
+.btn-register:hover{
+  background: #fff;
+  color: #3E56DF;
+}
+.signup-link{
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+.signup-link a{
+  color: #3E56DF;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.login-form h2{
+  font-size: 30px;
+  color: #3E56DF;
+}
+.seprator{
+  border-top: 1px solid #000;
+  margin-top: 30px;
+}
+.seprator h5 {
+    text-align: center;
+    background: #fff;
+    width: 40px;
+    margin: auto;
+    margin-top: -14px;
+    /* padding: 0 20px; */
+}
+.other-links ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 30px;
+}
+.other-links ul li a{
+  background: #3E56DF;
+  padding: 10px 20px 15px 20px;
+  border: 1px solid #3E56DF;
+  border-radius: 8px;
+  color: #fff;
+  transition: 0.3s all ease-in-out;
+    display: block;
+}
+.other-links ul li a:hover{
+  background: #fff;
+  color: #3E56DF;
+  transform: scale(1.1);
+}

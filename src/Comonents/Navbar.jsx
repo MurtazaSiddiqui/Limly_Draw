@@ -16,7 +16,7 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <Link 
-              to="/authentication/login"
+              to="/login"
               className='text-white bg-btn text-decoration-none px-4 py-2 rounded fs-18 d-flex align-items-center justify-content-center gap-2
                   fw-semibold '
             >

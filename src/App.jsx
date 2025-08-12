@@ -15,31 +15,30 @@ const ComponentWrapper = () => {
     return(
       <>
 
-      <AuthProvider>
-        <Routes>
-            <Route path="/" element={<LandingPage />} />
-      <Route path='login' element={<Login/>} />
-      <Route path='sign-up' element={<Register/>} />
+     <AuthProvider>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="login" element={<Login />} />
+        <Route path="sign-up" element={<Register />} />
 
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/whiteboard/:roomId"
-            element={
-              <ProtectedRoute>
-                <Whiteboard />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </AuthProvider>
+        <Route
+          path="dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="whiteboard/:roomId"
+          element={
+            <ProtectedRoute>
+              <Whiteboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </AuthProvider>
       </>
     )
 }

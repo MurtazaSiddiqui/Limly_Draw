@@ -2,14 +2,15 @@ import React, { useRef, useEffect } from "react";
 import { useStorage } from "@liveblocks/react";
 
 export default function Canvas() {
+  const canvasRef = useRef(null);
   const shapes = useStorage((root) => root.shapes);
-  const container = useRef();
 
   useEffect(() => {
-    const ctx = container.current.getContext("2d");
-    ctx.clearRect(0, 0, container.current.width, container.current.height);
+    if (!canvasRef.current) return;
+    const ctx = canvasRef.current.getContext("2d");
+    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
 
-    shapes.forEach((s) => {
+    shapes?.forEach((s) => {
       if (s.type === "rect") {
         ctx.fillStyle = s.color;
         ctx.fillRect(s.x, s.y, s.width, s.height);
@@ -17,5 +18,5 @@ export default function Canvas() {
     });
   }, [shapes]);
 
-  return <canvas ref={container} width={800} height={600} style={{border: "1px solid #ccc"}} />;
+  return <canvas ref={canvasRef} width={800} height={600} style={{ border: "1px solid #ccc" }} />;
 }

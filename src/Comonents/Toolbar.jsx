@@ -2,21 +2,17 @@ import React from "react";
 import { useMutation } from "@liveblocks/react";
 
 export default function Toolbar() {
-  const addRect = useMutation(({ storage }) => {
-    storage.get("shapes").push({
-      id: Date.now(),
+  const addShape = useMutation(({ storage }) => {
+    const shapes = storage.get("shapes");
+    shapes.push({
       type: "rect",
-      x: 50,
-      y: 50,
-      width: 100,
-      height: 60,
-      color: "#fc5"
+      x: Math.random() * 400,
+      y: Math.random() * 300,
+      width: 80,
+      height: 80,
+      color: "#" + Math.floor(Math.random() * 16777215).toString(16),
     });
   }, []);
 
-  return (
-    <div style={{ margin: "10px" }}>
-      <button onClick={() => addRect()}>Add Rectangle</button>
-    </div>
-  );
+  return <button onClick={addShape}>Add Rectangle</button>;
 }

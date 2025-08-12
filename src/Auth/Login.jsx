@@ -28,8 +28,8 @@ const Login = ()=> {
       );
       console.log("Logged in:", userCredential.user);
 
-       navigate('/Dashboard'); 
-       
+      navigate("/dashboard", { replace: true });
+
       // redirect or show dashboard
     } catch (err) {
       console.error(err.message);
