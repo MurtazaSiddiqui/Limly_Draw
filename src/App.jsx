@@ -3,12 +3,12 @@ import './App.css'
 import Login from './Auth/Login'
 import Register from './Auth/Register'
 import Loader from './Comonents/Loader'
-import LandingPage from './Pages/LandingPage'
-import Whiteboard from "./pages/Whiteboard";
 import { AuthProvider } from "./context/AuthContext";
-import Dashboard from './Pages/Dashboard'
-import ProtectedRoute from './Comonents/ProtectedRoute'
+import Dashboard from '../src/Pages/Dashboard';
+import LandingPage from '../src/Pages/LandingPage';
+import ProtectedRoute from './Comonents/ProtectedRoute';
 
+import { Navigate } from 'react-router'
 
 
 const ComponentWrapper = () => {
@@ -21,22 +21,24 @@ const ComponentWrapper = () => {
         <Route path="login" element={<Login />} />
         <Route path="sign-up" element={<Register />} />
 
-        <Route
-          path="dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="whiteboard/:roomId"
-          element={
-            <ProtectedRoute>
-              <Whiteboard />
-            </ProtectedRoute>
-          }
-        />
+       <Route 
+              path="/dashboard" 
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/room/:roomId" 
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          
       </Routes>
     </AuthProvider>
       </>
